@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        /*div{*/
+            /*max-height: 1px;*/
+            /*max-width: 10px;*/
+        /*}*/
+        p{
+            font-family: "Baskerville Old Face";
+            font-size: 25px;
+
+        }
+        #total {
+            padding: 10px;
+            height: 10%;
+            width: 10%;
+            background-color: orange;
+            border: solid 2px black;
+        }
+
+        #total {
+            padding: 30px;
+            display: none;
+        }
+        #result,#taxes {
+
+            max-height: 5%;
+            max-width: 5%;
+            padding: 5px;
+
+            background-color: darkseagreen;
+
+        }
+
+        #result,#taxes {
+            padding: 30px;
+            display: none;
+        }
+        /*#divv {*/
+            /*padding: 5px;*/
+
+            /*background-color: orange;*/
+            /*border: solid 2px black;*/
+        /*}*/
+
+        /*#divv {*/
+            /*padding: 100px;*/
+            /*display: none;*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+
+<div class="form-group">
+<input type="text" placeholder="" id="distance" ></div><br><br>
+<div class="form-group">
+<input type="text" placeholder="waitingtime" id="waitingtime"></div><br><br>
+<button id="btn-tot" class="btn btn-primary" onclick="totalPrice()">Total Fare</button><br><br>
+
+<div id="divv">
+    <div id="done">
+   <p class="a" id="b"> Fare:</p>
+        <div id="result"></div></div>
+    <div id="dtwo">
+    <p class="a" id="c">
+    Tax 5% GST:</p>
+    <div id="taxes"></div></div>
+    <div id="dthree">
+    <p class="a" id="d">Total Fare:</p>
+    <div id="total"></div></div>
+</div>
+<script>
+    $(function () {
+        $('.a').hide();
+        $('#btn-tot').click(function () {
+            $('.a').show();
+
+
+             $('#result').slideDown('slow')
+             $('#taxes').slideDown('slow');
+             $('#total').slideDown('slow');
+        })
+
+
+
+    })
+</script>
+<script>
+    function show(){
+        var parameters=location.search.substring(1).split("&");
+        var temp=parameters[0].split("=");
+       var l=unescape(temp[1]);
+    document.getElementById('distance').value=l;}
+    show();
+
+    var wt=document.getElementById('waitingtime');
+
+    if(wt.value== ' '){
+        alert("please enter waiting time")
+    }
+
+</script>
+<script src="distance.js"></script>
+<script src="script.js"></script>
+<script src="time.js"></script>
+</body>
+</html>
+
+
+
